@@ -1,0 +1,21 @@
+id: node_paragraph_wysiwyg
+uuid: 9719c12e-afc3-45c7-aab4-ba134263eccd
+label: 'Body Fields -> Paragraphs'
+description: 'Supplementary body fields'
+source:
+  plugin: wysiwyg
+  key: migrate
+process:
+  field_title: title
+  created: created
+  field_body/value: field_wysiwyg_content_value
+  field_body/format:
+    plugin: default_value
+    default_value: 'full_html'
+  type:
+    plugin: default_value
+    default_value: 'wysiwyg'
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: 'wysiwyg'
+

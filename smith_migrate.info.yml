@@ -1,0 +1,5 @@
+name: Smith Migrate
+description: Demo of paragraph migration
+package: Smith
+type: module
+core_version_requirement: ^8.8.0 || ^9.0

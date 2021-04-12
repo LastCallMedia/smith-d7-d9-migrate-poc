@@ -1,0 +1,25 @@
+# TODO: WHY IS THIS NOT GETTING INCLUDED IN THE MIGRATION STATUS?
+id: node_panel_node_page
+uuid: 9719c12e-afc3-45c7-aab4-ba134263ecce
+label: '(Node) Panel -> (Node) Page'
+description: 'Panel node to page node.'
+source:
+  plugin: page
+  key: migrate
+process:
+  title: title
+  created: created
+  field_body/value: field_wysiwyg_content_value
+  field_body/format:
+    plugin: default_value
+    default_value: 'full_html'
+  field_component:
+    plugin: sub_process
+    source: components
+    process:
+      target_id: id
+      target_revision_id: revision_id
+destination:
+  plugin: 'entity:node'
+  default_bundle: 'page'
+
